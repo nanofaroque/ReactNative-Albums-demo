@@ -1,0 +1,6 @@
+// JustifyContent is used to align elements vertically
+// alignItems is used to alight elements horizontally
+//props is used to pass data from component to component
+
+<Header headerText={'Albums'} />
+headerText is passed as props to Header compoent 
