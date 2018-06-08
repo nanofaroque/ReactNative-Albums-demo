@@ -1,14 +1,16 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
-const Button = ({ onPress }) => { // this onPress is coming from parent, Album detail
+const Button = ({ onPress, children }) => { // this onPress is coming from parent, Album detail
     const { buttonStyle, textStyle } = stylus;
     return (
         <TouchableOpacity 
         style={buttonStyle}
         onPress={onPress}
         >
-        <Text style={textStyle}>Click Me!!!</Text>
+        <Text style={textStyle}>
+            {children}
+        </Text>
         </TouchableOpacity>
     );
 };
