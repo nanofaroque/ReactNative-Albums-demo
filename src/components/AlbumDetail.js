@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, Linking } from 'react-native';
 import Card from './ItemCard';
 import CardSection from './CardSection';
+import Button from './Button';
 
 // Since this is just a presentation component, we wil go with functional component
 const AlbumDetail = ({ record }) => {
@@ -9,7 +10,8 @@ const AlbumDetail = ({ record }) => {
         title, 
         artist, 
         thumbnail_image,
-        image 
+        image,
+        url 
     } = record;
     const { 
         thumbnailImageStyle, 
@@ -35,6 +37,10 @@ const AlbumDetail = ({ record }) => {
                 <Image 
                     style={converImageStyle}
                     source={{ uri: image }} />
+            </CardSection>
+
+            <CardSection>
+                <Button onPress={() => Linking.openURL(url)} />
             </CardSection>
         </Card>
     );
